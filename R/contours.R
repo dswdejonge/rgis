@@ -5,7 +5,7 @@
 #' @param xyz A dataframe with column x, y, z data (long, lat, alt)
 #' @param contour_values A numeric vector of z values to contour. If this argument is provided, the stacking order of the contours will be preserved in the order of first occurence within the supplied vector.
 #' @return Returns a SpatialLinesDataFrame object (sp package) that can be used to draw all contour lines. All contour lines with a certain z-value can be found with 'contour_value' in the df.
-get_spatial_contours <- function(xyz,
+getSpatialContours <- function(xyz,
                                  contour_values = seq(from = -10, to = -200, by = -20)){
   # Calculate contours from potentially irregular xyz data.
   # returns dataframe with x, y, z, and Group.
