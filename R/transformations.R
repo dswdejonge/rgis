@@ -32,10 +32,14 @@ getSpatialCoordinates <- function(xy, epsg_code = NULL, crs_class = NULL){
   return(spatial_xy)
 }
 
-# xy = lat lon coordinates
 # TODO: also allow spatial object, check before.
-# epsg_code_from = code for coordinates given (make optional if already spatial object)
-# epsg_code_to = the epsg_code that should be transformed into
+
+#' Convert coordinate reference system
+#'
+#' @param xy lat lon coordinates
+#' @param epsg_code_from code for coordinates given (make optional if already spatial object)
+#' @param epsg_code_to the epsg_code that should be transformed into
+#' @export
 transform_latlon_to_different_CRS <- function(xy, epsg_code_from, epsg_code_to){
   spatial_coordinates <- getSpatialCoordinates(xy, epsg_code = epsg_code_from)
   new_coords <- sp::spTransform(spatial_coordinates, getCRSclass(epsg_code_to))

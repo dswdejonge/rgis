@@ -10,6 +10,10 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    dplyr
+    dplyr,
     sp,
-    contoureR
+    contoureR,
+    rgdal
+Suggests: 
+    testthat
+RoxygenNote: 7.0.2
