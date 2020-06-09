@@ -28,7 +28,7 @@ getSpatialCoordinates <- function(xy, epsg_code = NULL, crs_class = NULL){
   if(is.null(crs_class)){
     crs_class <- getCRSclass(epsg_code)
   }
-  proj4string(spatial_xy) <- crs_class
+  sp::proj4string(spatial_xy) <- crs_class
   return(spatial_xy)
 }
 
